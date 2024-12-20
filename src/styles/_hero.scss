@@ -1,0 +1,279 @@
+.first_screen {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.screen__img {
+  max-width: 100%;
+  width: 64rem;
+  height: 50rem;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.screen__descr {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  min-height: 30rem;
+  font-family: Montserrat, sans-serif;
+  max-width: 50rem;
+}
+
+.screen__descr_title {
+  font-size: 4.4rem;
+  font-weight: 700;
+  line-height: 5.4rem;
+}
+
+.screen__descr_text {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  font-weight: 400;
+}
+
+.button_screen {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  min-width: 18rem;
+  height: 5rem;
+  line-height: 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.4rem;
+  border: 1px solid #bcd0e5;
+  transition: all 0.3s ease-in-out;
+  background: #ff9900;
+  position: relative;
+  overflow: hidden;
+  span {
+    position: relative;
+    left: -0.5em;
+    transition: all 0.25s;
+  }
+  &::before,
+  &::after {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    transition: all 0.25s;
+    color: #000;
+  }
+  &::before {
+    width: 3.5rem;
+    content: "👉";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-indent: 0.5rem;
+    border-radius: 50% 0 0 50%;
+    z-index: 1;
+  }
+  &::after {
+    width: 100%;
+    transform: translate(100%, 0);
+    content: attr(data-hover);
+    text-align: left;
+    text-indent: 0.8rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    border-color: #bcd0e5;
+    span {
+      left: -100%;
+    }
+    &::before {
+      right: 70%;
+    }
+    &::after {
+      right: 70%;
+    }
+  }
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features__title {
+  margin-bottom: 5rem;
+  max-width: 54rem;
+
+  h2 {
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 4.4rem;
+    text-align: center;
+  }
+}
+
+.features__list {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 7rem;
+}
+
+.features__list_it {
+  max-width: 27rem;
+
+  img {
+    margin-bottom: 3rem;
+
+    &:hover {
+      opacity: 1;
+      -webkit-animation: flash 1.5s;
+      animation: flash 1.5s;
+    }
+
+    @-webkit-keyframes flash {
+      0% {
+        opacity: 0.4;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes flash {
+      0% {
+        opacity: 0.4;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.item_title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.item_descr {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+}
+
+.button_feat {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  width: 18rem;
+  height: 5rem;
+  line-height: 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.4rem;
+  border: 1px solid #bcd0e5;
+  transition: all 0.3s ease-in-out;
+  background: #ff9900;
+
+  &:hover {
+    transform: translateY(-0.25em);
+    box-shadow: 0 0 0.5em 0em #000;
+  }
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 11rem;
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.6rem;
+  }
+
+  h2 {
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 4.4rem;
+    margin-bottom: 2rem;
+  }
+
+  &.benefit--reverse {
+    flex-direction: row-reverse;
+    & .benefit__img {
+      height: 52rem;
+    }
+  }
+}
+
+.benefit__descr {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 43%;
+}
+
+.benefit__descr_text {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+}
+
+.benefit__descr_text_item {
+  p:first-child {
+    font-weight: 700;
+  }
+
+  &.benefit__descr_text_item--bef {
+    p {
+      font-weight: 500;
+      position: relative;
+      align-items: center;
+      display: flex;
+      max-width: 100%;
+      width: 50.5rem;
+
+      &::before {
+        width: 3.5rem;
+        height: 3.5rem;
+        content: url(../images/benefits.svg);
+        display: flex;
+        justify-content: center;
+        margin-right: 3rem;
+      }
+    }
+  }
+}
+
+.benefit__img {
+  width: 55%;
+  height: 57rem;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
